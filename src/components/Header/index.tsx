@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <section>
-        <img alt="Logo" />
+        <h1>Marvel</h1>
         <div>
           <form>
             <input type="text" placeholder="Digitar Pesquisa"></input>
