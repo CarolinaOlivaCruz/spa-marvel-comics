@@ -7,16 +7,16 @@ interface iChildren {
 interface iComicsContext {
   getComics(): void;
   listComics: iComic[];
+  setListComics(list: iComic[]): void;
 }
 
 interface iComic {
   id: number;
   title: string;
   description: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  };
+  images: any;
+  prices: any;
+  variantDescription: string;
 }
 
 export type { iChildren, iComicsContext, iComic };

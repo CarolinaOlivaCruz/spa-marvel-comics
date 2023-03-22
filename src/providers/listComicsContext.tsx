@@ -10,6 +10,7 @@ const hash = md5(time + privateKey + publicKey);
 
 const ComicsContext = createContext<iComicsContext>({
   listComics: [],
+  setListComics: () => [],
   getComics: async () => {},
 });
 
@@ -21,9 +22,8 @@ const ComicsProvider = ({ children }: iChildren) => {
       const response = await apiService.get(
         `comics?ts=${time}&apikey=${publicKey}&hash=${hash}`
       );
-      console.log(response);
-      
-      setListComics(response.data.results);
+
+      setListComics(response.data.data.results);
     } catch (error) {
       console.error(error);
     }
@@ -34,6 +34,7 @@ const ComicsProvider = ({ children }: iChildren) => {
       value={{
         listComics,
         getComics,
+        setListComics,
       }}
     >
       {children}

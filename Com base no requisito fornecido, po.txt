@@ -1,0 +1,19 @@
+Com base no requisito fornecido, podemos entender que a aplicação é uma espécie de catálogo de quadrinhos, que deve conter uma lista de quadrinhos e uma tela de detalhes para cada quadrinho. Além disso, a aplicação deve permitir o envio dos quadrinhos para um endereço selecionado no mapa, utilizando o Google Maps.
+
+Para implementar essa solução, é possível seguir os seguintes passos:
+
+Definir a arquitetura da aplicação: É importante definir uma arquitetura adequada para a aplicação, para garantir que ela seja escalável e fácil de manter. Algumas opções de arquitetura incluem MVC (Model-View-Controller), MVVM (Model-View-ViewModel) ou Clean Architecture. É importante considerar que a arquitetura escolhida deve ser compatível com as tecnologias utilizadas.
+
+Implementar a tela de lista de quadrinhos: A primeira tela da aplicação deve exibir uma lista de quadrinhos, com informações como título, autor, editora, número da edição, ano de publicação, entre outros. É importante permitir que o usuário possa ordenar a lista por diferentes critérios, como título, autor, editora, número da edição, entre outros.
+
+Implementar o modal de detalhe do quadrinho: Ao clicar em um quadrinho na lista, o usuário deve ser levado para uma tela de detalhes, que exibe informações mais detalhadas sobre o quadrinho. Algumas informações que podem ser exibidas nessa tela incluem sinopse, capa, páginas internas, entre outros.
+
+Integrar o Google Maps: Para permitir o envio dos quadrinhos para um endereço selecionado no mapa, é necessário integrar o Google Maps à aplicação. Para isso, é necessário criar uma conta no Google Maps Platform e obter uma chave de API. Com essa chave, é possível utilizar as APIs do Google Maps para exibir um mapa na tela e permitir que o usuário selecione um endereço. É importante lembrar de garantir que a chave de API esteja configurada corretamente para evitar erros.
+
+Implementar a funcionalidade de envio dos quadrinhos: Depois que o usuário selecionar o endereço no mapa, é necessário implementar a funcionalidade de envio dos quadrinhos. Isso pode ser feito por meio de um formulário que permite ao usuário inserir suas informações de contato e outras informações relevantes, como a quantidade de quadrinhos que deseja enviar e o horário preferido para a entrega.
+
+Adicionar funcionalidades extras: Para agregar valor à solução, é possível adicionar outras funcionalidades, como uma barra de pesquisa para encontrar quadrinhos específicos, uma lista de desejos para que o usuário possa salvar seus quadrinhos favoritos, uma seção de avaliações e comentários para cada quadrinho, entre outras.
+
+Criar um layout atraente: Para garantir que a aplicação seja atrativa e fácil de usar, é importante criar um layout atraente e intuitivo. Para isso, é possível utilizar ferramentas de design como o Figma, Sketch ou Adobe XD, que permitem criar protótipos interativos da aplicação.
+
+Com esses passos, é possível implementar uma aplicação que atenda aos requisitos propostos, utilizando tecnologias como HTML, CSS, JavaScript, React, Angular, Vue.js, entre outras. É
