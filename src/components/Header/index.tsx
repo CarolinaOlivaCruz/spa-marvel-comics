@@ -15,8 +15,10 @@ const Header = () => {
 
   const filterCards = (searchValue: string) => {
     const filteredProducts = listComics.filter((item) =>
-      item.title.toLowerCase().includes(searchValue)
+      item.title.toLowerCase().includes(searchValue)||
+      item.variantDescription.toLowerCase().includes(searchValue)
     );
+
     filteredProducts.length > 0 ? setListComics(filteredProducts) : getComics();
   };
 

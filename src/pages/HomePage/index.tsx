@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Header from "../../components/Header";
 import ListComics from "../../components/ListComics";
-import { iComic } from "../../interfaces";
 import { ComicsContext } from "../../providers/listComicsContext";
 
 const HomePage = () => {
-  const { getComics, listComics } = useContext(ComicsContext);
+  const { getComics } = useContext(ComicsContext);
   
   useEffect(() => {
     getComics();
