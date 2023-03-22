@@ -5,9 +5,11 @@ interface iChildren {
 }
 
 interface iComicsContext {
-  getComics(): void;
+  getComics: () => Promise<void>;
   listComics: iComic[];
   setListComics(list: iComic[]): void;
+  setIsModal: (isModal: boolean) => void;
+  isModal: boolean;
 }
 
 interface iComic {

@@ -12,10 +12,13 @@ const ComicsContext = createContext<iComicsContext>({
   listComics: [],
   setListComics: () => [],
   getComics: async () => {},
+  setIsModal: () => {},
+  isModal: false,
 });
 
 const ComicsProvider = ({ children }: iChildren) => {
   const [listComics, setListComics] = useState<iComic[]>([]);
+  const [isModal, setIsModal] = useState(false);
 
   const getComics = async () => {
     try {
@@ -35,6 +38,8 @@ const ComicsProvider = ({ children }: iChildren) => {
         listComics,
         getComics,
         setListComics,
+        setIsModal,
+        isModal,
       }}
     >
       {children}
