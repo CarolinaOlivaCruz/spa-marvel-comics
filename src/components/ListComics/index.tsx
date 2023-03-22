@@ -10,6 +10,7 @@ const ListComics = () => {
         const { id, title, variantDescription, prices, images } = item;
         const img =
           images.length > 0 ? images[0].path + "." + images[0].extension : "";
+       console.log(id, title);
        
         return (
           <li key={id}>
