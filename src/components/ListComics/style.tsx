@@ -8,14 +8,15 @@ const StyledCards = styled.ul`
   gap: 15px;
 
   li {
-    width: 45%;
-    height: 550px;
+    width: 200px;
+    max-width: 240px;
+    max-height: 300px;
     margin: 0 auto;
     color: #ffff;
     display: flex;
     align-items: center;
     gap: 10px;
-    
+
     section {
       width: 100%;
       height: 100%;
@@ -43,16 +44,15 @@ const StyledCards = styled.ul`
 `;
 
 const StyledContainer = styled.div`
-  padding: 15px;
-  width: 50%;
-  height: 90%;
+  padding: 5px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 5px;
 
   h4 {
-    font-size: 35px;
+    font-size: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -61,7 +61,7 @@ const StyledContainer = styled.div`
   }
 
   p {
-    font-size: 30px;
+    font-size: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -70,8 +70,8 @@ const StyledContainer = styled.div`
   }
 
   button {
-    font-size: 30px;
-    padding: 20px;
+    font-size: 18px;
+    padding: 10px;
     border-radius: 32px;
     color: #ffff;
     background-color: #000;

@@ -12,7 +12,7 @@ export const StyledHeader = styled.header`
   align-items: center;
 
   section {
-    width: 90%;
+    width: 88%;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -58,5 +58,9 @@ export const StyledHeader = styled.header`
         }
       }
     }
+  }
+
+  @media (min-width: 700px){
+    height: 150px;
   }
 `;
