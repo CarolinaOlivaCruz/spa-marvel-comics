@@ -7,6 +7,7 @@ const StyledModal = styled.section`
   animation: show-background 0.8s ease;
   z-index: 3;
   background-color: #23252ba1;
+  color: #ffff;
   -webkit-animation: show-background 0.8s ease;
   display: flex;
   justify-content: center;
@@ -72,9 +73,16 @@ const StyledModal = styled.section`
       justify-content: flex-end;
       padding: 10px 30px;
       border-bottom: 1px solid #ffff;
-
       button {
         color: #ffff;
+        font-size: 25px;
+      }
+    }
+
+    main {
+      button {
+        color: #ffff;
+        background-color: #ec1d24;
         font-size: 25px;
       }
     }

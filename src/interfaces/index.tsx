@@ -10,6 +10,8 @@ interface iComicsContext {
   setListComics(list: iComic[]): void;
   setIsModal: (isModal: boolean) => void;
   isModal: boolean;
+  setIsComic(comic: iComic | undefined): void;
+  isComic: iComic | undefined;
 }
 
 interface iComic {
@@ -19,6 +21,17 @@ interface iComic {
   images: any;
   prices: any;
   variantDescription: string;
+  creators: iCreator[];
+  characters: iItems;
 }
 
-export type { iChildren, iComicsContext, iComic };
+interface iItems {
+  items: { name: string }[];
+}
+
+interface iCreator {
+  name: string;
+  role: string;
+}
+
+export type { iChildren, iComicsContext, iComic, iCreator, iItems};

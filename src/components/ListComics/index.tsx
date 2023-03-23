@@ -2,10 +2,19 @@ import { useContext } from "react";
 import { ComicsContext } from "../../providers/listComicsContext";
 import { StyledContainer, StyledCards } from "./style";
 import notImage from "../../assets/img/not-image.png";
-import CardDetails from "../ModalCard";
 
 const ListComics = () => {
-  const { listComics, setIsModal } = useContext(ComicsContext);
+  const { listComics, setIsModal, setIsComic } = useContext(ComicsContext);
+
+  const modalDetailsComic = (idComic: Number) => {
+    const comicFind = listComics.find((item) => item.id === idComic);
+
+    if (comicFind) {
+      setIsModal(true);
+      setIsComic(comicFind);
+    }
+  };
+
   return (
     <StyledCards>
       {listComics?.map((item) => {
@@ -25,7 +34,7 @@ const ListComics = () => {
                 <h4>{title}</h4>
                 <p>{variantDescription}</p>
                 <p>{prices[0].price}</p>
-                <button type="button" onClick={() => setIsModal(true)}>
+                <button type="button" onClick={() => modalDetailsComic(id)}>
                   Detalhes
                 </button>
               </StyledContainer>
