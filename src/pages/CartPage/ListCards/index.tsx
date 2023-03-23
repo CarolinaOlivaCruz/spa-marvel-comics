@@ -3,6 +3,7 @@ import { iComic } from "../../../interfaces";
 import { CartContext } from "../../../providers/cartContext";
 import StyledListCart from "./style";
 import deleteImg from "../../../assets/img/delete.png";
+import AddressSearch from "../../../components/AddressSearch";
 
 const ListCart = () => {
   const { Total, currentSale, deleteCart } = useContext(CartContext);
@@ -33,6 +34,7 @@ const ListCart = () => {
         <p>Adicione itens ao carrinho</p>
       )}
 
+      <AddressSearch/>
       <span>Total R$ {Total.toFixed(2)}</span>
     </StyledListCart>
   );
