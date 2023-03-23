@@ -3,9 +3,12 @@ import { ComicsContext } from "../../providers/listComicsContext";
 import { StyledModal } from "./style";
 import notImage from "../../assets/img/not-image.png";
 import { iCreator } from "../../interfaces";
+import { CartContext } from "../../providers/cartContext";
 
 const CardDetails = () => {
   const { setIsModal, isComic } = useContext(ComicsContext);
+  const { addCart } = useContext(CartContext);
+
   const comicImage =
     isComic?.images.length > 0
       ? `${isComic?.images[0].path}.${isComic?.images[0].extension}`
@@ -49,7 +52,7 @@ const CardDetails = () => {
               )}
             <span>{isComic?.prices[0].price}</span>
           </article>
-          <button>Adicionar no carrinho</button>
+          <button type="button" onClick={() => isComic && addCart(isComic)}>Adicionar no carrinho</button>
         </main>
       </div>
     </StyledModal>

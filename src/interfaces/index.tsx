@@ -34,4 +34,19 @@ interface iCreator {
   role: string;
 }
 
-export type { iChildren, iComicsContext, iComic, iCreator, iItems};
+interface iCartContext {
+  setCurrentSale(data: iComic[]): void;
+  addCart(data: iComic): void;
+  deleteCart(index: number): void;
+  currentSale: iComic[];
+  Total: number;
+}
+
+export type {
+  iChildren,
+  iComicsContext,
+  iComic,
+  iCreator,
+  iItems,
+  iCartContext,
+};

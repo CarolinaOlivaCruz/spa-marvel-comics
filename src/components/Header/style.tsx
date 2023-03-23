@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   width: 100vw;
-  height: 200px;
   color: #ffff;
   background-color: #23252b;
-  border-bottom: 2px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,6 +17,14 @@ export const StyledHeader = styled.header`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 20px 0;
+    gap: 10px;
+
+    img {
+      width: 250px;
+      height: 85px;
+      object-fit: cover;
+    }
 
     h1 {
       font-size: 50px;
@@ -29,9 +36,11 @@ export const StyledHeader = styled.header`
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 10px;
 
       img {
         width: 60px;
+        height: 100%;
         object-fit: cover;
       }
 
@@ -60,7 +69,7 @@ export const StyledHeader = styled.header`
     }
   }
 
-  @media (min-width: 700px){
+  @media (min-width: 700px) {
     height: 150px;
   }
 `;

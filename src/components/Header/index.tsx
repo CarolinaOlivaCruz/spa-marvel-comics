@@ -4,6 +4,7 @@ import imgCart from "../../assets/img/cart.png";
 import imgSearch from "../../assets/img/search.png";
 import { ComicsContext } from "../../providers/listComicsContext";
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/img/logo.png"
 
 const Header = () => {
   const { getComics, listComics, setListComics } = useContext(ComicsContext);
@@ -27,7 +28,7 @@ const Header = () => {
   return (
     <StyledHeader onSubmit={handleSubmit}>
       <section>
-        <h1>Marvel</h1>
+        <img src={logo} alt="" />
         <div>
           <form>
             <input
