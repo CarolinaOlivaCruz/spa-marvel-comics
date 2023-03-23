@@ -25,7 +25,7 @@ const StyledListCart = styled.section`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
+
     li {
       width: 100%;
       height: 80px;
@@ -36,8 +36,14 @@ const StyledListCart = styled.section`
       align-items: center;
       background-color: #000;
 
+      div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
       img {
-        width: 60px;
+        width: 40px;
       }
     }
   }

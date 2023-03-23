@@ -39,7 +39,6 @@ const StyledModal = styled.section`
     width: 100%;
     max-width: 798px;
     margin: 20px;
-    min-height: 318px;
     -webkit-animation: slide-bottom 0.7s ease;
 
     @-webkit-keyframes slide-bottom {
@@ -81,7 +80,6 @@ const StyledModal = styled.section`
     }
 
     main {
-      width: 100%;
       display: flex;
       flex-direction: column;
 
