@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { iComic } from "../../../interfaces";
 import { CartContext } from "../../../providers/cartContext";
 import StyledListCart from "./style";
+import deleteImg from "../../../assets/img/delete.png"
 
 const ListCart = () => {
   const {Total, currentSale, deleteCart } = useContext(CartContext);
@@ -19,7 +20,7 @@ const ListCart = () => {
                 </div>
               </div>
               <button type="button" onClick={() => deleteCart(index)}>
-                <img src="" alt="Lixeira" />
+                <img src={deleteImg} alt="Lixeira" />
               </button>
             </li>
           ))}
