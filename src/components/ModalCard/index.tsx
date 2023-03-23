@@ -6,10 +6,9 @@ import { iCreator } from "../../interfaces";
 
 const CardDetails = () => {
   const { setIsModal, isComic } = useContext(ComicsContext);
-  console.log(isComic);
-  const img =
+  const comicImage =
     isComic?.images.length > 0
-      ? isComic?.images[0].path + "." + isComic?.images[0].extension
+      ? `${isComic?.images[0].path}.${isComic?.images[0].extension}`
       : notImage;
 
   return (
@@ -19,19 +18,20 @@ const CardDetails = () => {
           <button onClick={() => setIsModal(false)}>X</button>
         </header>
         <main>
-          <img src={img} alt="" />
-          <h4>{isComic?.title}</h4>
+          <img src={comicImage} alt={isComic?.title} />
+          <h2>{isComic?.title}</h2>
           <article>
-            <p>{isComic?.description}</p>
-            <p>{isComic?.prices[0].price}</p>
+            <h3>{isComic?.description}</h3>
             {isComic?.creators && Array.isArray(isComic?.creators) && (
               <ul>
                 {isComic?.creators.map((creator: iCreator, index: number) => {
                   const { name, role } = creator;
+
+                  let nameAndRole = `${name} - ${role}`;
+
                   return (
                     <li key={index}>
-                      <p>{name}</p>
-                      <p>{role}</p>
+                      <p>{nameAndRole}</p>
                     </li>
                   );
                 })}
@@ -47,6 +47,7 @@ const CardDetails = () => {
                   ))}
                 </ul>
               )}
+            <span>{isComic?.prices[0].price}</span>
           </article>
           <button>Adicionar no carrinho</button>
         </main>

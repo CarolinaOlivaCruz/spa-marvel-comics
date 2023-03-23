@@ -36,11 +36,11 @@ const StyledModal = styled.section`
     background-color: #000;
     animation: slide-bottom 0.7s ease;
     border-radius: 8px;
+    width: 100%;
     max-width: 798px;
     margin: 20px;
     min-height: 318px;
     -webkit-animation: slide-bottom 0.7s ease;
-    width: 100%;
 
     @-webkit-keyframes slide-bottom {
       0% {
@@ -73,6 +73,7 @@ const StyledModal = styled.section`
       justify-content: flex-end;
       padding: 10px 30px;
       border-bottom: 1px solid #ffff;
+
       button {
         color: #ffff;
         font-size: 25px;
@@ -80,7 +81,50 @@ const StyledModal = styled.section`
     }
 
     main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      h2 {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      article {
+        width: 90%;
+        margin: 30px auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        h3 {
+          text-align: center;
+        }
+
+        li {
+          display: inline-block;
+        }
+
+        span {
+          margin: 30px;
+          font-size: 30px;
+        }
+      }
+
       button {
+        width: 50%;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 0 auto;
         color: #ffff;
         background-color: #ec1d24;
         font-size: 25px;
