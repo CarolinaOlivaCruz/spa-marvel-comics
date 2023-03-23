@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import ButtonArrow from "../../components/ButtonArrow";
 import Header from "../../components/Header";
 import ListComics from "../../components/ListComics";
 import CardDetails from "../../components/ModalCard";
@@ -18,6 +19,7 @@ const HomePage = () => {
       <Header />
       <main>
         <ListComics />
+        <ButtonArrow/>
       </main>
     </>
   );

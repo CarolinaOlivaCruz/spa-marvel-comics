@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ComicsContext } from "../../providers/listComicsContext";
 import { StyledContainer, StyledCards } from "./style";
 import notImage from "../../assets/img/not-image.png";
