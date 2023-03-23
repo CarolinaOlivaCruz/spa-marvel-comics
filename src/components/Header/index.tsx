@@ -3,10 +3,12 @@ import { StyledHeader } from "./style";
 import imgCart from "../../assets/img/cart.png";
 import imgSearch from "../../assets/img/search.png";
 import { ComicsContext } from "../../providers/listComicsContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { getComics, listComics, setListComics } = useContext(ComicsContext);
   const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -40,7 +42,7 @@ const Header = () => {
               <img src={imgSearch} alt="Buscar" />
             </button>
           </form>
-          <button type="button">
+          <button type="button" onClick={() => navigate("/cart")}>
             <img src={imgCart} alt="Carrinho" />
           </button>
         </div>
