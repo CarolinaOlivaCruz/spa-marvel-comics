@@ -18,11 +18,12 @@ export const StyledHeader = styled.header`
     justify-content: space-around;
     align-items: center;
     padding: 20px 0;
-    gap: 10px;
+    gap: 5px;
 
     img {
       width: 250px;
       height: 85px;
+      margin-top: 10px;
       object-fit: cover;
     }
 
@@ -41,6 +42,7 @@ export const StyledHeader = styled.header`
       img {
         width: 60px;
         height: 100%;
+        margin: 0;
         object-fit: cover;
       }
 
