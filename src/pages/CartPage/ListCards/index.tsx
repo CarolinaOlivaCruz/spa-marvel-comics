@@ -11,30 +11,32 @@ const ListCart = () => {
   return (
     <StyledListCart>
       {currentSale && currentSale.length > 0 ? (
-        <ul>
-          {currentSale.map((item: iComic, index: number) => {
-            const img = `${item.images[0].path}.${item.images[0].extension}`;
-            return (
-              <li key={index}>
-                <div>
-                  <img src={img} alt="Imagem do Produto" />
-                  <h4>{item.title}</h4>
-                </div>
-                <div>
-                  <p>R$ {item.prices[0].price}</p>
-                  <button type="button" onClick={() => deleteCart(index)}>
-                    <img src={deleteImg} alt="Lixeira" />
-                  </button>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <>
+          <ul>
+            {currentSale.map((item: iComic, index: number) => {
+              const img = `${item.images[0].path}.${item.images[0].extension}`;
+              return (
+                <li key={index}>
+                  <div>
+                    <img src={img} alt="Imagem do Produto" />
+                    <h4>{item.title}</h4>
+                  </div>
+                  <div>
+                    <p>R$ {item.prices[0].price}</p>
+                    <button type="button" onClick={() => deleteCart(index)}>
+                      <img src={deleteImg} alt="Lixeira" />
+                    </button>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+          <AddressSearch />
+        </>
       ) : (
-        <p>Adicione itens ao carrinho</p>
+        <h3>Adicione itens ao carrinho</h3>
       )}
 
-      <AddressSearch/>
       <span>Total R$ {Total.toFixed(2)}</span>
     </StyledListCart>
   );

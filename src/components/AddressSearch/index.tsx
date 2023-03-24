@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import search from "../../assets/img/search.png"
+import search from "../../assets/img/search.png";
+import StyledContainer from "./style";
 
 const AddressSearch = () => {
   const [address, setAddress] = useState("");
@@ -26,23 +27,28 @@ const AddressSearch = () => {
   };
 
   return (
-    <div>
+    <StyledContainer>
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor="address-input">Address:</label>
-        <input
-          id="address-input"
-          type="text"
-          value={address}
-          onChange={handleAddressChange}
-        />
-        <button type="submit"><img src={search} alt="" /></button>
+        <div>
+          <input
+            id="address-input"
+            type="text"
+            value={address}
+            onChange={handleAddressChange}
+            placeholder="Digite aqui o seu endereço..."
+          />
+          <button type="submit">
+            <img src={search} alt="" />
+          </button>
+        </div>
       </form>
       {formattedAddress && (
         <div>
-          <p>Endereço: {formattedAddress}</p>
+          <p>Endereço:</p>
+          <p>{formattedAddress}</p>
         </div>
       )}
-    </div>
+    </StyledContainer>
   );
 };
 

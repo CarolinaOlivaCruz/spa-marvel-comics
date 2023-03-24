@@ -11,6 +11,12 @@ const StyledListCart = styled.section`
   background-color: #23252b;
   border-radius: 8px;
 
+  h3 {
+    font-size: 30px;
+    text-align: center;
+    margin: 25% auto;
+  }
+
   ul {
     width: 100%;
     max-height: 1000px;
@@ -59,7 +65,8 @@ const StyledListCart = styled.section`
     font-weight: bold;
 
     @media (min-width: 900px) {
-      font-size: 25px;
+      margin-right: 15px;
+      font-size: 30px;
     }
   }
 `;
