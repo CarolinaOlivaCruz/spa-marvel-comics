@@ -40,6 +40,7 @@ const StyledModal = styled.section`
     max-width: 798px;
     margin: 20px;
     -webkit-animation: slide-bottom 0.7s ease;
+    overflow: auto;
 
     @-webkit-keyframes slide-bottom {
       0% {
@@ -72,6 +73,7 @@ const StyledModal = styled.section`
       justify-content: flex-end;
       padding: 10px 30px;
       border-bottom: 1px solid #ffff;
+      margin-top: 0;
 
       button {
         color: #ffff;
@@ -123,6 +125,7 @@ const StyledModal = styled.section`
         padding: 15px;
         border-radius: 8px;
         margin: 0 auto;
+        margin-bottom: 20px;
         color: #ffff;
         background-color: #ec1d24;
         font-size: 25px;
