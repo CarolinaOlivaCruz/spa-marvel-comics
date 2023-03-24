@@ -18,20 +18,21 @@
 <br>
 • <a href="#funcionalidades">Funcionalidades</a>
 <br>
+• <a href="#Bugs">Report bugs</a>
+<br>
 • <a href="#doc">Documentação da API da Marvel</a>
 <br>
 • <a href="#Bibliotecas">Bibliotecas</a>
 <br>
 • <a href="#Ferramentas">Ferramentas</a>
 <br>
-• <a href="#Desenvolvedora">Desenvolvedora:</a>
+• <a href="#Desenvolvedora">Desenvolvedora</a>
 <br>
 
 <h2 id="descricao">:pencil2: Descrição</h2>
 A aplicação é uma espécie de catálogo de quadrinhos, que deve conter uma lista de quadrinhos e uma tela de detalhes para cada quadrinho. Além disso, a aplicação deve permitir o envio dos quadrinhos para um endereço selecionado no mapa, utilizando o Google Maps.
 
 <h2 id="Bibliotecas">:books: Bibliotecas utilizadas</h2>
-
 - [x] React
 - [x] Styled components
 - [x] Context API
@@ -66,10 +67,26 @@ A aplicação é uma espécie de catálogo de quadrinhos, que deve conter uma li
 <img alt="search address in API Google Maps" src="https://github.com/CarolinaOlivaCruz/spa-mavel-comics/blob/main/src/assets/img/search-google-maps.png" />
 </div>
 
+<h2 id="Bugs">:books: Report bugs</h2>
+To Do:
+
+- [ ] Padronizar as fonts
+- [ ] Padronizar a paleta de cores no globalStyles
+- [ ] Adicionar funcionalidade e estilo de button disable
+- [ ] Corrigir bugs da funcionalidade de filtro, quando o filtro for clicado mas não receber 
+nenhum valor deve listar todos os cards, caso o quadrinho não foi encontrado, retorna mensagem 
+Nenhum quadrinho foi encontrado
+- [ ] Adicionar funcionalidade de see caso um qudrinho for adicionado mais de uma vez,
+que renderize apenas um no carrinho e atualize o preço e o total
+- [ ] Adicionar funcionalidade que é possível utilizar as APIs do Google Maps para exibir
+um mapa na tela e permitir que o usuário selecione um endereço, visto que até o momento se
+faz a busca no Google Maps, todavia não é possível selecionar o endereço
+- [ ] Ajustar o Header para que no seu style, ele possa receber propriedades para se adaptar as páginas
+
 <h2 id="doc">:page_facing_up: Documentação da API da Marvel </h2>
  * <a href="https://developer.marvel.com/docs">Clique aqui</a> para acessar o repositório.
  
- <h2>Requisitos detalhado para funcionalidades desenvolvidas e que serão desenvolvidas:</h2>
+ <h2>Requisitos detalhados para funcionalidades desenvolvidas e que serão desenvolvidas:</h2>
 
 Com base no requisito fornecido, podemos entender que a aplicação é uma espécie de catálogo de quadrinhos, que deve conter uma lista de quadrinhos e uma tela de detalhes para cada quadrinho. Além disso, a aplicação deve permitir o envio dos quadrinhos para um endereço selecionado no mapa, utilizando o Google Maps.
 
