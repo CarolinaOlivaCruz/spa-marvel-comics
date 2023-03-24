@@ -3,8 +3,8 @@ import { iComic } from "../../../interfaces";
 import { CartContext } from "../../../providers/cartContext";
 import StyledListCart from "./style";
 import deleteImg from "../../../assets/img/delete.png";
-import AddressSearch from "../../../components/AddressSearch";
 import notImage from "../../../assets/img/not-image.png";
+import AddressSearch from "../../../components/AddressSearch";
 
 const ListCart = () => {
   const { Total, currentSale, deleteCart } = useContext(CartContext);
