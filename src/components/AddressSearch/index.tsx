@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import search from "../../assets/img/search.png";
 import StyledContainer from "./style";
@@ -19,10 +21,9 @@ const AddressSearch = () => {
       );
       const formattedAddress: any = response.data.results[0].formatted_address;
       setFormattedAddress(formattedAddress);
-
-      console.log(formattedAddress);
+      toast.success("Endereço dicionado com sucesso");
     } catch (error) {
-      console.error(error);
+      toast.error("Ops! Endereço não encontrado ou inválido");
     }
   };
 

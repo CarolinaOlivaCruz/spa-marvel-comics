@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { ComicsContext } from "../../providers/listComicsContext";
 import { StyledModal } from "./style";
 import notImage from "../../assets/img/not-image.png";
@@ -14,12 +16,17 @@ const CardDetails = () => {
       ? `${isComic?.images[0].path}.${isComic?.images[0].extension}`
       : notImage;
 
-      const handleAddToCart = () => {
-        if (isComic) {
-          addCart(isComic);
-          setIsModal(false);
-        }
+  const handleAddToCart = () => {
+    try {
+      if (isComic) {
+        addCart(isComic);
+        setIsModal(false);
+        toast.success("Adicionado com sucesso");
       }
+    } catch (error) {
+      toast.error("Ops! Tente novamente");
+    }
+  };
 
   return (
     <StyledModal>
@@ -59,7 +66,9 @@ const CardDetails = () => {
               )}
             <span>{isComic?.prices[0].price}</span>
           </article>
-          <button type="button" onClick={handleAddToCart}>Adicionar no carrinho</button>
+          <button type="button" onClick={handleAddToCart}>
+            Adicionar no carrinho
+          </button>
         </main>
       </div>
     </StyledModal>
