@@ -37,6 +37,9 @@ A aplicação é uma espécie de catálogo de quadrinhos, que deve conter uma li
 <h2 id="Start">:computer: Start da aplicação</h2>
 Para inicialização das depêndecias projeto, após fazer o clone SSH, abrir o terminal, e usar comando yarn, e após isso usar o comando yarn start
 
+Link Vercel: 
+<a href="https://spa-mavel-comics-carolinaolivacruz.vercel.app/">Clique aqui</a> para acessar o projeto.
+
 <h2 id="Bibliotecas">:books: Bibliotecas utilizadas</h2>
 
 - [x] ReactJs
@@ -89,6 +92,7 @@ um mapa na tela e permitir que o usuário selecione um endereço, visto que até
 faz a busca no Google Maps, todavia não é possível selecionar o endereço
 - [ ] Ajustar o Header para que no seu style, ele possa receber propriedades para se adaptar as páginas
 - [ ] Ajustar o deploy da Vercel, visto que não renderiza os quadrinhos
+- [ ] Implementar segurança de Keys privadas
 
 <h2 id="doc">:page_facing_up: Documentação da API da Marvel </h2>
  <a href="https://developer.marvel.com/docs">Clique aqui</a> para acessar a Api da Marvel.
