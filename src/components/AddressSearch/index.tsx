@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import "dotenv/config";
+import env from "react-dotenv";
 import search from "../../assets/img/search.png";
 import StyledContainer from "./style";
 
