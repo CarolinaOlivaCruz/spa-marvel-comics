@@ -8,7 +8,7 @@ import logo from "../../assets/img/logo.png";
 import { CartContext } from "../../providers/cartContext";
 
 const Header = () => {
-  const { getComics, listComics, setListComics } = useContext(ComicsContext);
+  const { listComics, setListComics } = useContext(ComicsContext);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
   const { currentSale } = useContext(CartContext);
@@ -16,17 +16,21 @@ const Header = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    filterCards(inputValue);
+    filterCards();
   };
 
-  const filterCards = (searchValue: string) => {
-    const filteredProducts = listComics.filter(
-      (item) =>
-        item.title.toLowerCase().includes(searchValue) ||
-        item.variantDescription.toLowerCase().includes(searchValue)
-    );
-
-    filteredProducts.length > 0 ? setListComics(filteredProducts) : getComics();
+  const filterCards = () => {
+    const filteredProducts = inputValue
+      ? listComics.filter(
+          (item) =>
+            item.title.toLowerCase().includes(inputValue) ||
+            item.variantDescription.toLowerCase().includes(inputValue)
+        )
+      : listComics;
+    setListComics(filteredProducts);
+    if (!inputValue) {
+      window.location.reload();
+    }
   };
 
   return (
