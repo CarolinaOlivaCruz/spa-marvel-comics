@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import search from "../../assets/img/search.png"
 
 const AddressSearch = () => {
   const [address, setAddress] = useState("");
@@ -34,11 +35,11 @@ const AddressSearch = () => {
           value={address}
           onChange={handleAddressChange}
         />
-        <button type="submit">Buscar</button>
+        <button type="submit"><img src={search} alt="" /></button>
       </form>
       {formattedAddress && (
         <div>
-          <p>Endereço:{formattedAddress}</p>
+          <p>Endereço: {formattedAddress}</p>
         </div>
       )}
     </div>

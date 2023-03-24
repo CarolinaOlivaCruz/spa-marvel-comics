@@ -3,7 +3,6 @@ import { StyledHeader } from "../../components/Header/style";
 import ListCart from "./ListCards";
 import StyledButton from "./style";
 import logo from "../../assets/img/logo.png"
-import AddressSearch from "../../components/AddressSearch";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -17,7 +16,6 @@ const Cart = () => {
       </StyledHeader>
       <main>
         <ListCart />
-        
       </main>
     </>
   );

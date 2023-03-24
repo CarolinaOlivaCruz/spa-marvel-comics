@@ -14,6 +14,13 @@ const CardDetails = () => {
       ? `${isComic?.images[0].path}.${isComic?.images[0].extension}`
       : notImage;
 
+      const handleAddToCart = () => {
+        if (isComic) {
+          addCart(isComic);
+          setIsModal(false);
+        }
+      }
+
   return (
     <StyledModal>
       <div>
@@ -52,7 +59,7 @@ const CardDetails = () => {
               )}
             <span>{isComic?.prices[0].price}</span>
           </article>
-          <button type="button" onClick={() => isComic && addCart(isComic)}>Adicionar no carrinho</button>
+          <button type="button" onClick={handleAddToCart}>Adicionar no carrinho</button>
         </main>
       </div>
     </StyledModal>

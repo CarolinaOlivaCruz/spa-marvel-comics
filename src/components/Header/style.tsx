@@ -67,6 +67,11 @@ export const StyledHeader = styled.header`
         img {
           width: 40px;
         }
+
+      }
+      span {
+        font-size: 30px;
+        color: #ffff;
       }
     }
   }

@@ -4,12 +4,15 @@ import imgCart from "../../assets/img/cart.png";
 import imgSearch from "../../assets/img/search.png";
 import { ComicsContext } from "../../providers/listComicsContext";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/img/logo.png"
+import logo from "../../assets/img/logo.png";
+import { CartContext } from "../../providers/cartContext";
 
 const Header = () => {
   const { getComics, listComics, setListComics } = useContext(ComicsContext);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
+  const { currentSale } = useContext(CartContext);
+  const cartItemCount = currentSale.length;
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -17,9 +20,10 @@ const Header = () => {
   };
 
   const filterCards = (searchValue: string) => {
-    const filteredProducts = listComics.filter((item) =>
-      item.title.toLowerCase().includes(searchValue)||
-      item.variantDescription.toLowerCase().includes(searchValue)
+    const filteredProducts = listComics.filter(
+      (item) =>
+        item.title.toLowerCase().includes(searchValue) ||
+        item.variantDescription.toLowerCase().includes(searchValue)
     );
 
     filteredProducts.length > 0 ? setListComics(filteredProducts) : getComics();
@@ -45,6 +49,7 @@ const Header = () => {
           </form>
           <button type="button" onClick={() => navigate("/cart")}>
             <img src={imgCart} alt="Carrinho" />
+            {cartItemCount > 0 && <span>{String(cartItemCount)}</span>}
           </button>
         </div>
       </section>

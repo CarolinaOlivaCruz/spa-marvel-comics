@@ -1,36 +1,46 @@
 import { createContext, useState } from "react";
 import { iCartContext, iChildren, iComic } from "../interfaces";
 
-export const CartContext = createContext<iCartContext>({} as iCartContext);
+export const CartContext = createContext<iCartContext>({
+  currentSale: [],
+  addToCart: () => {},
+  deleteCart: () => {},
+  cartItems: {},
+  setCartItems: () => {},
+  total: 0,
+  setTotal: () => {},
+});
 
-export const CartProvider = ({ children }: iChildren) => {
-  const [currentSale, setCurrentSale] = useState<iComic[]>([] as iComic[]);
-  
-  const addCart = (data: iComic) => {
-    setCurrentSale([...currentSale, data]);
+const CartProvider = ({ children }: iChildren) => {
+  const [currentSale, setCurrentSale] = useState<iComic[]>([]);
+  const [cartItems, setCartItems] = useState<{ [key: string]: number }>({});
+  const [total, setTotal] = useState<number>(0);
+
+  const addToCart = (comic: iComic) => {
+    setCurrentSale([...currentSale, comic]);
   };
 
-  const deleteCart = (indexKey: number) => {
-    const newList = currentSale.filter((item, index) => index !== indexKey);
-    setCurrentSale(newList);
+  const deleteCart = (index: number) => {
+    const updatedSale = [...currentSale];
+    updatedSale.splice(index, 1);
+    setCurrentSale(updatedSale);
   };
-
-  const Total = currentSale.reduce((acc, currentValue) => {
-    return acc + currentValue.prices[0].price;
-  }, 0);
- 
 
   return (
     <CartContext.Provider
       value={{
         currentSale,
-        setCurrentSale,
-        addCart,
+        addToCart,
         deleteCart,
-        Total,
+        cartItems,
+        setCartItems,
+        total,
+        setTotal,
       }}
     >
       {children}
     </CartContext.Provider>
   );
 };
+
+export default CartProvider;

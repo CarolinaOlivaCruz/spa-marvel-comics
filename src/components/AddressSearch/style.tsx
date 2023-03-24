@@ -3,9 +3,6 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
 background-color: #ffff;
 
-p {
-    
-}
 form {
     label {
         color: #000;
