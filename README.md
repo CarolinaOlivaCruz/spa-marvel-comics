@@ -45,6 +45,7 @@ A aplicação é uma espécie de catálogo de quadrinhos, que deve conter uma li
 - [x] VS Code
 - [x] Github
 - [x] Typescript
+- [x] Node 16.18.0
 
 <h2 id="funcionalidades">:hammer: Funcionalidades</h2>
 
