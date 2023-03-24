@@ -1,5 +1,4 @@
 import md5 from "md5";
-import "dotenv/config";
 import { createContext, useState } from "react";
 import { iChildren, iComic, iComicsContext } from "../interfaces";
 import apiService from "../services/api";
