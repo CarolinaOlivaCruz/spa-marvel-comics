@@ -36,7 +36,7 @@ A aplicação é uma espécie de catálogo de quadrinhos, que deve conter uma li
 - [x] Styled components
 - [x] Context API
 - [x] React-hook-form
-- [ ] React toastfy
+- [x] React toastfy
 - [x] React Router DOM
 - [x] Axios
 
