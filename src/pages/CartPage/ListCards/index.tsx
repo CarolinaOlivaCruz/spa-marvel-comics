@@ -4,6 +4,7 @@ import { CartContext } from "../../../providers/cartContext";
 import StyledListCart from "./style";
 import deleteImg from "../../../assets/img/delete.png";
 import AddressSearch from "../../../components/AddressSearch";
+import notImage from "../../../assets/img/not-image.png";
 
 const ListCart = () => {
   const { Total, currentSale, deleteCart } = useContext(CartContext);
@@ -14,7 +15,11 @@ const ListCart = () => {
         <>
           <ul>
             {currentSale.map((item: iComic, index: number) => {
-              const img = `${item.images[0].path}.${item.images[0].extension}`;
+              const img =
+                item.images.length > 0
+                  ? item.images[0].path + "." + item.images[0].extension
+                  : notImage;
+
               return (
                 <li key={index}>
                   <div>
