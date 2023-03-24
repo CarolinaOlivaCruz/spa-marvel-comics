@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import "dotenv/config";
 import search from "../../assets/img/search.png";
 import StyledContainer from "./style";
 
@@ -17,7 +18,7 @@ const AddressSearch = () => {
     event.preventDefault();
     try {
       const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyAeNyW-RXa1f5u-uI7DNnj4O6XcHdrflbQ`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.GOOGLE_KEY}`
       );
       const formattedAddress: any = response.data.results[0].formatted_address;
       setFormattedAddress(formattedAddress);
