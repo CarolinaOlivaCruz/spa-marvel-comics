@@ -11,12 +11,6 @@ const StyledListCart = styled.section`
   background-color: #23252b;
   border-radius: 8px;
 
-  p {
-    font-size: 30px;
-    text-align: center;
-    margin: 25% auto;
-  }
-
   ul {
     width: 100%;
     max-height: 1000px;
@@ -29,7 +23,7 @@ const StyledListCart = styled.section`
     li {
       width: 100%;
       height: 80px;
-      padding: 15px;
+      padding: 15px 25px;
       border-radius: 8px;
       display: flex;
       justify-content: space-between;
@@ -37,9 +31,19 @@ const StyledListCart = styled.section`
       background-color: #000;
 
       div {
+        padding: 0 5px;
         display: flex;
         align-items: center;
         gap: 10px;
+
+        h4 {
+          max-width: 50ch;
+        }
+
+        p {
+          margin: 0 15px;
+          font-size: 30px;
+        }
       }
 
       img {
