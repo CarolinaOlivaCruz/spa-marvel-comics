@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
 import env from "react-dotenv";
 import search from "../../assets/img/search.png";
 import StyledContainer from "./style";
@@ -14,7 +13,6 @@ const AddressSearch = () => {
   const handleAddressChange = (event: any) => {
     setAddress(event.target.value);
   };
-console.log(env.GOOGLE_KEY);
 
   const handleFormSubmit = async (event: any) => {
     event.preventDefault();
