@@ -1,0 +1,5 @@
+window.env = {
+  "PUBLIC_KEY": "47c67153788247549eb5dcc43c36a616",
+  "PRIVATE_KEY": "45c4c36067cffe248cf71395ffb42395bf74a225",
+  "GOOGLE_KEY": "AIzaSyBcIpkQWWdkNAk5erO1rftyMKpXu5iPTDY"
+};

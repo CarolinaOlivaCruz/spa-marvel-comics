@@ -1,12 +1,10 @@
+import React from "react";
 import md5 from "md5";
+import moment from "moment";
+import env from "react-dotenv";
 import { createContext, useState } from "react";
 import { iChildren, iComic, iComicsContext } from "../interfaces";
-import apiService from "../services/api";
-
-const publicKey = "47c67153788247549eb5dcc43c36a616";
-const privateKey = "45c4c36067cffe248cf71395ffb42395bf74a225";
-const time = Number(new Date());
-const hash = md5(time + privateKey + publicKey);
+import {apiService} from "../services/api";
 
 const ComicsContext = createContext<iComicsContext>({
   listComics: [],
@@ -23,10 +21,18 @@ const ComicsProvider = ({ children }: iChildren) => {
   const [isModal, setIsModal] = useState(false);
   const [isComic, setIsComic] = useState<iComic | undefined>(undefined);
 
+  const generateHash = (ts: string) => {
+    const privateKey = env.PRIVATE_KEY || '';
+    const publicKey = env.PUBLIC_KEY || '';
+    return md5(ts + privateKey + publicKey);
+  };
+
   const getComics = async () => {
     try {
+      const ts = moment().utc().format("x");
+      const hash = generateHash(ts);
       const response = await apiService.get(
-        `comics?ts=${time}&apikey=${publicKey}&hash=${hash}`
+        `/comics?ts=${ts}&apikey=${env.PUBLIC_KEY}&hash=${hash}`
       );
 
       setListComics(response.data.data.results);

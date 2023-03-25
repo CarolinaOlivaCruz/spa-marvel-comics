@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import env from "react-dotenv";
 import search from "../../assets/img/search.png";
 import StyledContainer from "./style";
+import { apiServiceGoogleMaps } from "../../services/api";
 
 const AddressSearch = () => {
   const [address, setAddress] = useState("");
@@ -12,12 +14,13 @@ const AddressSearch = () => {
   const handleAddressChange = (event: any) => {
     setAddress(event.target.value);
   };
+console.log(env.GOOGLE_KEY);
 
   const handleFormSubmit = async (event: any) => {
     event.preventDefault();
     try {
-      const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyAeNyW-RXa1f5u-uI7DNnj4O6XcHdrflbQ`
+      const response = await apiServiceGoogleMaps.get(
+        `/geocode/json?address=${address}&key=${env.GOOGLE_KEY}`
       );
       const formattedAddress: any = response.data.results[0].formatted_address;
       setFormattedAddress(formattedAddress);
