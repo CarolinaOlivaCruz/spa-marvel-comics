@@ -92,7 +92,7 @@ um mapa na tela e permitir que o usuário selecione um endereço, visto que até
 faz a busca no Google Maps, todavia não é possível selecionar o endereço
 - [ ] Ajustar o Header para que no seu style, ele possa receber propriedades para se adaptar as páginas
 - [ ] Ajustar o deploy da Vercel, visto que não renderiza os quadrinhos
-- [ ] Implementar segurança de Keys privadas
+- [x] Implementar segurança de Keys privadas
 
 <h2 id="doc">:page_facing_up: Documentação da API da Marvel </h2>
  <a href="https://developer.marvel.com/docs">Clique aqui</a> para acessar a Api da Marvel.
