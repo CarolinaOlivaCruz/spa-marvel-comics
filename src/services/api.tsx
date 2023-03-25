@@ -6,4 +6,9 @@ const apiService = axios.create({
   timeout: 10000,
 });
 
-export default apiService;
+const apiServiceGoogleMaps = axios.create({
+  baseURL: "https://maps.googleapis.com/maps/api/",
+  timeout: 10000,
+});
+
+export {apiService, apiServiceGoogleMaps};
